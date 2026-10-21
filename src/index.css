@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Pirata+One&display=swap');
+
+:root {
+  font-family: 'Manrope', 'Helvetica Neue', sans-serif;
+  color: #eadbd4;
+  background: #0b0607;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  --paper: #0b0607;
+  --soft-paper: #13090b;
+  --ink: #eadbd4;
+  --muted: #8e7671;
+  --rule: rgba(195, 20, 45, .24);
+  --accent: #d11a35;
+  --accent-dark: #ff3b53;
+  --blood: #6e0010;
+  --display: 'Pirata One', 'Cinzel', Georgia, serif;
+  --mono: 'DM Mono', monospace;
+}
+
+* { box-sizing: border-box; }
+html { min-width: 320px; scroll-behavior: smooth; }
+body { min-width: 320px; margin: 0; }
+body, button, a { font-family: 'Manrope', 'Helvetica Neue', sans-serif; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; text-decoration: none; }
+button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+::selection { color: #151513; background: #d6a083; }

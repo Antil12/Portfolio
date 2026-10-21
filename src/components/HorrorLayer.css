@@ -1,0 +1,41 @@
+.horror-layer { position: fixed; z-index: 15; inset: 0; overflow: hidden; pointer-events: none; }
+
+.blood-vignette { position: absolute; inset: 0; background: radial-gradient(ellipse at center, transparent 55%, rgba(70, 0, 8, .55) 100%); animation: vignette-pulse 6s ease-in-out infinite; }
+@keyframes vignette-pulse { 0%, 100% { opacity: .75; } 50% { opacity: 1; } 53% { opacity: .55; } 56% { opacity: 1; } }
+
+.cobweb { position: absolute; top: 0; width: clamp(110px, 16vw, 220px); fill: none; stroke: rgba(230, 220, 215, .22); stroke-width: 1; }
+.cobweb-left { left: 0; }
+.cobweb-right { right: 0; transform: scaleX(-1); }
+
+.bat { position: absolute; left: 0; animation: bat-fly linear infinite; will-change: transform; }
+.bat-reverse { animation-direction: reverse; }
+.bat-reverse .bat-svg { transform: scaleX(-1); }
+.bat-bob { animation: bat-bob 2.6s ease-in-out infinite; }
+.bat-svg { display: block; fill: #050203; filter: drop-shadow(0 0 6px rgba(195, 20, 45, .45)); }
+.bat-wing { transform-box: view-box; transform-origin: 50px 26px; animation: bat-flap .22s ease-in-out infinite alternate; }
+.bat-eye { fill: #ff2a3c; }
+@keyframes bat-fly { from { transform: translate3d(-15vw, 0, 0); } to { transform: translate3d(115vw, 0, 0); } }
+@keyframes bat-bob { 0%, 100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-38px) rotate(5deg); } }
+@keyframes bat-flap { from { transform: scaleY(1); } to { transform: scaleY(-.35); } }
+
+.spider { position: absolute; top: 0; display: flex; flex-direction: column; align-items: center; animation: spider-drop ease-in-out infinite; will-change: transform; transform: translateY(-100%); }
+.spider-thread { position: absolute; bottom: 60%; width: 1px; height: 120vh; background: linear-gradient(to bottom, rgba(230, 220, 215, .05), rgba(230, 220, 215, .45)); }
+.spider-svg { position: relative; display: block; fill: #070304; animation: spider-sway 3.4s ease-in-out infinite; transform-origin: 50% 0; }
+.spider-legs { fill: none; stroke: #070304; stroke-width: 2; stroke-linecap: round; transform-box: view-box; transform-origin: 30px 30px; animation: spider-legs .35s ease-in-out infinite alternate; }
+.spider-legs-right { animation-delay: -.17s; }
+.spider-mark { fill: #b3001b; }
+.spider-eye { fill: #ff2a3c; }
+@keyframes spider-drop {
+  0%, 12% { transform: translateY(-100%); }
+  45%, 62% { transform: translateY(var(--drop)); }
+  70% { transform: translateY(calc(var(--drop) - 3vh)); }
+  78% { transform: translateY(var(--drop)); }
+  100% { transform: translateY(-100%); }
+}
+@keyframes spider-sway { 0%, 100% { transform: rotate(-6deg); } 50% { transform: rotate(6deg); } }
+@keyframes spider-legs { from { transform: rotate(-5deg); } to { transform: rotate(5deg); } }
+
+@media (max-width: 620px) {
+  .bat:nth-child(n + 8) { display: none; }
+  .cobweb { width: 90px; }
+}
